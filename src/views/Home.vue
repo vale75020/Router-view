@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>component Home</h1>
+    <hr>
+      <button @click='goToLogin()'>Go To Login</button>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
 
 export default {
   name: 'home',
-  components: {
-    HelloWorld
+  methods: {  // functions 
+    goToLogin() {
+      //alert('it works!')  // navigation dinamique
+      this.$router.push('login') // pour acceder au router de l'app
+      // pour se delogger utiliser replace() pour effacer l'historique
+    }
   }
 }
 </script>
